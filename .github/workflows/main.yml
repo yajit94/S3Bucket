@@ -22,7 +22,7 @@ jobs:
           function_name: github-to-lambda-demo
           source: lambda_function.py
           role-duration-seconds: 1200
-          role-session-name: MySessionName
+        
       - name: zip Lambda Function
         run: |
           zip -r9 lambda.zip lambda_function.py
