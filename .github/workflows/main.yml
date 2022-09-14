@@ -22,4 +22,9 @@ jobs:
           function_name: github-to-lambda-demo
           source: lambda_function.py
           zip_file: lambda_function.zip
+          
+      - name: deploy
+        run: |
+          zip -j deploy.zip ./* #--> Zip the Code As we know lambda function accept the zip file.
+          aws lambda update-function-code --function-name=github-to-lambda-demo --zip-file=fileb://lambda_function.zip 
 
